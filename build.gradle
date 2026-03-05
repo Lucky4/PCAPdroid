@@ -1,8 +1,8 @@
 buildscript {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url('/opt/android-plugin') }
+        maven {
+            url('/opt/android-plugin')
+        }
         google()
         mavenCentral()
     }
@@ -12,12 +12,14 @@ buildscript {
 }
 allprojects {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url('/opt/android-plugin') }
+        maven {
+            url('/opt/android-plugin')
+        }
         google()
         mavenCentral()
-        maven { url('https://jitpack.io') }
+        maven {
+            url('https://jitpack.io')
+        }
     }
     tasks.withType(JavaCompile, {
         options.compilerArgs << '-Xlint:unchecked' << '-Xlint:deprecation'
